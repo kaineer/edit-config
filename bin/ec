@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ "$CONFIGS_DIR" == "" ]]; then
+  CONFIGS_DIR="~/.config/configs/list"
+fi
+
+cd $CONFIGS_DIR
+
+ls *.{sh,ls} | sed 's/\.\w\+$//'
+
+cd - >/dev/null
